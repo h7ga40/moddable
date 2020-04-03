@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoBitmap.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoBMPOut.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoBufferOut.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoColorCellOut.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoConvert.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoParseBMF.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoParseBMP.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoPixelsOut.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoPoco.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoReadJPEG.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoReadPNG.js" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoRLE4Out.js" />
+    <CustomBuild Include="..\..\..\tools\bles2gatt.js" />
+    <CustomBuild Include="..\..\..\tools\buildclut.js" />
+    <CustomBuild Include="..\..\..\tools\colorcellencode.js" />
+    <CustomBuild Include="..\..\..\tools\compressbmf.js" />
+    <CustomBuild Include="..\..\..\tools\file.js" />
+    <CustomBuild Include="..\..\..\tools\image2cs.js" />
+    <CustomBuild Include="..\..\..\tools\mcconfig.js" />
+    <CustomBuild Include="..\..\..\tools\mclocal.js" />
+    <CustomBuild Include="..\..\..\tools\mcmanifest.js" />
+    <CustomBuild Include="..\..\..\tools\mcrez.js" />
+    <CustomBuild Include="..\..\..\tools\png2bmp.js" />
+    <CustomBuild Include="..\..\..\tools\resampler.js" />
+    <CustomBuild Include="..\..\..\tools\rle4encode.js" />
+    <CustomBuild Include="..\..\..\tools\tool.js" />
+    <CustomBuild Include="..\..\..\tools\wav2maud.js" />
+  </ItemGroup>
+</Project>

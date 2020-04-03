@@ -20,6 +20,11 @@
 				"*": "$(SERIAL)/esp32/*",
 			},
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(SERIAL)/gr_rose/*",
+			},
+		},
 		"gecko": {
 			"modules": {
 				"*": "$(SERIAL)/gecko/*",

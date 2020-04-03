@@ -313,7 +313,7 @@ void fxCombinePromisesCallback(txMachine* the)
 {
 	txSlot* slot = mxFunctionInstanceHome(mxFunction->value.reference)->value.home.object->next;
 	txInteger which = slot->value.integer;
-	txSlot* instance;
+	txSlot* instance = NULL;
 	txSlot* property;
 	slot = slot->next;
 	if (slot->value.closure->kind != XS_UNINITIALIZED_KIND)

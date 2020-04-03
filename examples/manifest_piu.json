@@ -36,6 +36,12 @@
 			},
 			"preload": "setup/piu"
 		},
+		"gr_rose": {
+			"modules": {
+				"setup/piu": "$(BUILD)/devices/gr_rose/setup/piu",
+			},
+			"preload": "setup/piu"
+		},
 		"gecko": {
 			"modules": {
 				"setup/piu": "$(BUILD)/devices/gecko/setup/piu",

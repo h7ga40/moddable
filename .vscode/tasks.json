@@ -1,0 +1,77 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build tools",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}\\build\\makefiles\\win"
+            },
+            "command": "build.bat",
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "build hello world",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}\\examples\\helloworld"
+            },
+            "command": "mcconfig",
+            "args": [
+                "-m",
+                "-d",
+                "-p",
+                "gr_rose"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "write helloworld app",
+            "linux": {
+                "command": "rsync",
+                "args": [
+                    "-av",
+                    "--progress",
+                    "${workspaceFolder}/build/bin/gr_rose/debug/helloworld/main.bin",
+                    "/media/${env:USER}/MBED/"
+                ]
+            },
+            "osx": {
+                "command": "rsync",
+                "args": [
+                    "-av",
+                    "--progress",
+                    "${workspaceFolder}/build/bin/gr_rose/debug/helloworld/main.bin",
+                    "/Volumes/MBED/"
+                ]
+            },
+            "windows": {
+                "command": "C:\\Windows\\System32\\robocopy.exe",
+                "args": [
+                    "${workspaceFolder}\\build\\bin\\gr_rose\\debug\\helloworld",
+                    "E:\\",
+                    "main.bin"
+                ],
+                "options": {
+                    "shell": {
+                        "executable": "C:\\Windows\\System32\\cmd.exe",
+                        "args": [
+                            "/D",
+                            "/C"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": []
+        }
+    ]
+}

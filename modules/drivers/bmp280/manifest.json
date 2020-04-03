@@ -17,6 +17,11 @@
 				"*": "$(MODULES)/drivers/bmp280/gecko/*",
 			},
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(MODULES)/drivers/bmp280/gr_rose/*",
+			},
+		},
 		"...": {
 			"error": "bmp280 unsupported"
 		}

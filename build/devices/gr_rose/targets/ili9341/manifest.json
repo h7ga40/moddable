@@ -1,0 +1,26 @@
+{
+	"include": [
+		"$(MODULES)/drivers/ili9341/manifest.json",
+	],
+	"config": {
+		"screen": "ili9341",
+		"touch": "",
+	},
+	"defines": {
+		"ili9341": {
+			"width": 240,
+			"height": 320,
+			"cs": {
+				"port": null,
+				"pin": 4
+			},
+			"dc": {
+				"port": null,
+				"pin": 2
+			},
+			"spi": {
+				"port": "#SPI_0"
+			}
+		}
+	}
+}

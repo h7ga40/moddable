@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\xs\sources\xsAll.c" />
+    <ClCompile Include="..\..\xs\sources\xsAPI.c" />
+    <ClCompile Include="..\..\xs\sources\xsArguments.c" />
+    <ClCompile Include="..\..\xs\sources\xsArray.c" />
+    <ClCompile Include="..\..\xs\sources\xsAtomics.c" />
+    <ClCompile Include="..\..\xs\sources\xsBigInt.c" />
+    <ClCompile Include="..\..\xs\sources\xsBoolean.c" />
+    <ClCompile Include="..\..\xs\sources\xsCode.c" />
+    <ClCompile Include="..\..\xs\sources\xsCommon.c" />
+    <ClCompile Include="..\..\xs\sources\xsDataView.c" />
+    <ClCompile Include="..\..\xs\sources\xsDate.c" />
+    <ClCompile Include="..\..\xs\sources\xsDebug.c" />
+    <ClCompile Include="..\..\xs\sources\xsDefaults.c" />
+    <ClCompile Include="..\..\xs\sources\xsdtoa.c" />
+    <ClCompile Include="..\..\xs\sources\xsError.c" />
+    <ClCompile Include="..\..\xs\sources\xsFunction.c" />
+    <ClCompile Include="..\..\xs\sources\xsGenerator.c" />
+    <ClCompile Include="..\..\xs\sources\xsGlobal.c" />
+    <ClCompile Include="..\..\xs\sources\xsJSON.c" />
+    <ClCompile Include="..\..\xs\sources\xsLexical.c" />
+    <ClCompile Include="..\..\xs\sources\xsMapSet.c" />
+    <ClCompile Include="..\..\xs\sources\xsMarshall.c" />
+    <ClCompile Include="..\..\xs\sources\xsMath.c" />
+    <ClCompile Include="..\..\xs\sources\xsMemory.c" />
+    <ClCompile Include="..\..\xs\sources\xsModule.c" />
+    <ClCompile Include="..\..\xs\sources\xsNumber.c" />
+    <ClCompile Include="..\..\xs\sources\xsObject.c" />
+    <ClCompile Include="..\..\xs\sources\xsPlatforms.c" />
+    <ClCompile Include="..\..\xs\sources\xsProfile.c" />
+    <ClCompile Include="..\..\xs\sources\xsPromise.c" />
+    <ClCompile Include="..\..\xs\sources\xsProperty.c" />
+    <ClCompile Include="..\..\xs\sources\xsProxy.c" />
+    <ClCompile Include="..\..\xs\sources\xsre.c" />
+    <ClCompile Include="..\..\xs\sources\xsRegExp.c" />
+    <ClCompile Include="..\..\xs\sources\xsRun.c" />
+    <ClCompile Include="..\..\xs\sources\xsScope.c" />
+    <ClCompile Include="..\..\xs\sources\xsScript.c" />
+    <ClCompile Include="..\..\xs\sources\xsSourceMap.c" />
+    <ClCompile Include="..\..\xs\sources\xsString.c" />
+    <ClCompile Include="..\..\xs\sources\xsSymbol.c" />
+    <ClCompile Include="..\..\xs\sources\xsSyntaxical.c" />
+    <ClCompile Include="..\..\xs\sources\xsTree.c" />
+    <ClCompile Include="..\..\xs\sources\xsType.c" />
+    <ClCompile Include="..\..\xs\tools\xst.c" />
+    <ClCompile Include="..\..\xs\tools\yaml\api.c" />
+    <ClCompile Include="..\..\xs\tools\yaml\loader.c" />
+    <ClCompile Include="..\..\xs\tools\yaml\parser.c" />
+    <ClCompile Include="..\..\xs\tools\yaml\reader.c" />
+    <ClCompile Include="..\..\xs\tools\yaml\scanner.c" />
+    <ClCompile Include="..\..\xs\tools\yaml\writer.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{BB4F33D0-942D-4E9E-9F5E-1D981FA8292F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>xst</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;YAML_DECLARE_STATIC;INCLUDE_XSPLATFORM;XSPLATFORM="xst.h";mxDebug=1;mxNoConsole=1;mxParse=1;mxRun=1;mxSloppy=1;mxRegExpUnicodePropertyEscapes=1;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\xs\includes;..\..\xs\platforms;..\..\xs\sources;..\..\xs\tools;..\..\xs\tools\yaml</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;YAML_DECLARE_STATIC;INCLUDE_XSPLATFORM;XSPLATFORM="xst.h";mxDebug=1;mxNoConsole=1;mxParse=1;mxRun=1;mxSloppy=1;mxRegExpUnicodePropertyEscapes=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\xs\includes;..\..\xs\platforms;..\..\xs\sources;..\..\xs\tools;..\..\xs\tools\yaml</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

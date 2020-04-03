@@ -14,6 +14,11 @@
 				"*": "$(MODULES)/pins/analog/esp32/*"
 			},
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(MODULES)/pins/analog/gr_rose/*"
+			},
+		},
 		"gecko": {
 			"modules": {
 				"*": "$(MODULES)/pins/analog/gecko/*"

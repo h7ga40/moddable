@@ -473,8 +473,8 @@ void fx_Atomics_xor(txMachine* the)
 	#define mxThreads 1
 
 	#include "FreeRTOS.h"
-	#include "freertos/queue.h"
-	#include "freertos/semphr.h"
+	#include "queue.h"
+	#include "semphr.h"
 
 	typedef TaskHandle_t txCondition;
 	typedef struct {

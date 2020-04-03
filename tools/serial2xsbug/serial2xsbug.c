@@ -310,7 +310,7 @@ static void systemCommand(char* command, char **buffer){
 }
 
 static char* printAddress(char* address){
-	char* commandPart = "/xtensa-lx106-elf-addr2line -aipfC -e ";
+	char* commandPart = "/rx-elf-addr2line -aipfC -e ";
 	char command[2000] = {0};
 	char* buffer;
 

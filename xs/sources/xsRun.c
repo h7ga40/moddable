@@ -321,7 +321,7 @@ void fxRunID(txMachine* the, txSlot* generator, txInteger count)
 	register txSlot* stack = the->stack;
 	register txSlot* scope = the->scope;
 	register txSlot* frame = the->frame;
-	register txSlot* environment;
+	register txSlot* environment = NULL;
 	register txByte* code = the->code;
 	register txSlot* variable;
 	register txSlot* slot;

@@ -14,6 +14,13 @@
 			},
 			"preload": "pins/i2c",
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(MODULES)/pins/i2c/gr_rose/*",
+				"pins/i2c": "$(MODULES)/pins/i2c/i2c",
+			},
+			"preload": "pins/i2c",
+		},
 		"gecko": {
 			"modules": {
 				"*": "$(MODULES)/pins/i2c/gecko/*",

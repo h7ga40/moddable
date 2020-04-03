@@ -1,0 +1,46 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\arduino",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\arduino\\core",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\config_files",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\include",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\include\\private",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\FreeRTOS\\portable\\GCC\\RX600v2",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\FreeRTOS-Plus-TCP\\include",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\FreeRTOS-Plus-TCP\\source\\portable\\Compiler\\GCC",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\src\\amazon_freertos_common",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\src\\FIT_modified_code\\r_bsp\\mcu\\rx65n\\register_access\\gnuc",
+                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\src\\FIT_setting_files\\r_config"
+            ],
+            "defines": [
+                "CPPAPP",
+                "NDEBUG",
+                "TF_LITE_MCU_DEBUG_LOG",
+                "TF_LITE_STATIC_MEMORY",
+                "GEMMLOWP_ALLOW_SLOW_SCALAR_FALLBACK",
+                "ARDUINOSTL_M_H",
+                "ARDUINO=144",
+                "GRROSE",
+                "__RX600__",
+                "__RTOS",
+                "USING_UXR",
+                "USING_WIFI",
+                "mxUseDefaultSharedChunks=1",
+                "mxRun=1",
+                "mxNoConsole=1",
+                "kCommodettoBitmapFormat=7",
+                "kPocoRotation=0"
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}

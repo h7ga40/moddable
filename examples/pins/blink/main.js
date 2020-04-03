@@ -15,13 +15,12 @@
 import Timer from "timer";
 import Digital from "pins/digital";
 
-// blinks the two LEDs on ESP8266 NodeMCU boards
-// blinks only blue LED on ESP32 Node<MCU boards (pin 2).
+// blinks the two LEDs on GR-ROSE
 
 let count = 0;
 Timer.repeat(() => {
 	trace(`repeat ${++count} \n`);
-	Digital.write(2, ~count & 1);
-	Digital.write(16, count & 1);
+	Digital.write(25, ~count & 1);
+	Digital.write(26, count & 1);
 }, 200);
 

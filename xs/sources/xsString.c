@@ -167,7 +167,7 @@ txSlot* fxNewStringInstance(txMachine* the)
 void fxStringAccessorGetter(txMachine* the)
 {
 	txSlot* instance = fxToInstance(the, mxThis);
-	txSlot* string;
+	txSlot* string = NULL;
 	txID id = the->scratch.value.at.id;
 	txIndex index = the->scratch.value.at.index;
 	while (instance) {
@@ -182,7 +182,7 @@ void fxStringAccessorGetter(txMachine* the)
 		mxResult->value.integer = string->value.key.sum;
 		mxResult->kind = XS_INTEGER_KIND;
 	}
-	else {
+	else if (string) {
 		txInteger from = fxUnicodeToUTF8Offset(string->value.key.string, index);
 		if (from >= 0) {
 			txInteger to = fxUnicodeToUTF8Offset(string->value.key.string, index + 1);
@@ -975,7 +975,7 @@ void fx_String_prototype_replace(txMachine* the)
 	txString string;
 	txSlot* match;
 	txSlot* function = C_NULL;
-	txSlot* replace;
+	txSlot* replace = NULL;
 
 	if (fx_String_prototype_withRegexp(the, mxID(_Symbol_replace), 0, 2))
 		return;
@@ -1023,7 +1023,7 @@ void fx_String_prototype_replaceAll(txMachine* the)
 	txString string;
 	txSlot* match;
 	txSlot* function = C_NULL;
-	txSlot* replace;
+	txSlot* replace = NULL;
 	txInteger size;
 	txInteger matchLength;
 	txInteger resultSize = 0;

@@ -452,10 +452,10 @@ void fx_RegExp_prototype_exec(txMachine* the)
 		txSlot* resultItem;
 		txSlot* indicesArray;
 		txSlot* indicesItem;
-		txSlot* resultObject;
-		txSlot* resultProperty;
-		txSlot* indicesObject;
-		txSlot* indicesProperty;
+		txSlot* resultObject = NULL;
+		txSlot* resultProperty = NULL;
+		txSlot* indicesObject = NULL;
+		txSlot* indicesProperty = NULL;
 		txInteger count;
 		txInteger index;
 		txInteger length;

@@ -15,6 +15,11 @@
 				"*": "$(MODULES)/pins/digital/monitor/esp32/*",
 			},
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(MODULES)/pins/digital/monitor/gr_rose/*",
+			},
+		},
 		"gecko": {
 			"modules": {
 				"*": "$(MODULES)/pins/digital/monitor/gecko/*",

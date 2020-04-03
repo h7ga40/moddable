@@ -62,7 +62,7 @@ long gxMockupCount = 0;
 long gxMockupIndex = 0;
 txMockup** gxMockups = NULL;
 
-char* gxFormatNames[pixelFormatCount] = {
+const char* gxFormatNames[pixelFormatCount] = {
 	"16-bit RGB 565 Little Endian",
 	"16-bit RGB 565 Big Endian",
 	"8-bit Gray",
@@ -239,9 +239,9 @@ BOOL CALLBACK fxMockupCreate(HMODULE hModule, LPCTSTR lpszType, LPTSTR lpszName,
 	char* string = (char*)LockResource(jsonGlobal);
 	ULONG size = SizeofResource(gInstance, jsonRsrc);
 	ULONG offset = 0;
-	char* nameFrom;
-	char* nameTo;
-	char* valueFrom;
+	char* nameFrom = NULL;
+	char* nameTo = NULL;
+	char* valueFrom = NULL;
 	char* valueTo;
 	int state = JSON_FILE;
 	while (offset < size) {

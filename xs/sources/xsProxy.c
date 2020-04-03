@@ -893,7 +893,7 @@ void fx_Reflect_apply(txMachine* the)
 
 void fx_Reflect_construct(txMachine* the)
 {
-    txSlot* target;
+    txSlot* target = NULL;
 	if ((mxArgc < 1) || !mxIsReference(mxArgv(0)) || !mxIsConstructor(mxArgv(0)->value.reference))
 		mxTypeError("target is no constructor");
 	if ((mxArgc < 2) || (mxArgv(1)->kind != XS_REFERENCE_KIND))

@@ -667,7 +667,7 @@ again:
 void fxArrayLengthGetter(txMachine* the)
 {
 	txSlot* instance = fxToInstance(the, mxThis);
-	txSlot* array;
+	txSlot* array = NULL;
 	while (instance) {
 		if (instance->flag & XS_EXOTIC_FLAG) {
 			array = instance->next;
@@ -681,7 +681,7 @@ void fxArrayLengthGetter(txMachine* the)
 		if (alias)
 			array = alias->next;
 	}
-	if (((txInteger)array->value.array.length) < 0) {
+	if (array && (((txInteger)array->value.array.length) < 0)) {
 		mxResult->value.number = array->value.array.length;
 		mxResult->kind = XS_NUMBER_KIND;
 	}
@@ -694,7 +694,7 @@ void fxArrayLengthGetter(txMachine* the)
 void fxArrayLengthSetter(txMachine* the)
 {
 	txSlot* instance = fxToInstance(the, mxThis);
-	txSlot* array;
+	txSlot* array = NULL;
 	while (instance) {
 		if (instance->flag & XS_EXOTIC_FLAG) {
 			array = instance->next;

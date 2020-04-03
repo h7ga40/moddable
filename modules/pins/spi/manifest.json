@@ -10,6 +10,11 @@
 				"*": "$(MODULES)/pins/spi/esp32/*",
 			},
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(MODULES)/pins/spi/gr_rose/*",
+			},
+		},
 		"gecko": {
 			"modules": {
 				"*": "$(MODULES)/pins/spi/gecko/*",

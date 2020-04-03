@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoBitmap.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoBufferOut.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoColorCellOut.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoConvert.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoParseBMF.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoParseBMP.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoPoco.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoPocoBlit.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoReadJPEG.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\commodettoReadPNG.c" />
+    <CustomBuild Include="..\..\..\modules\commodetto\miniz.c" />
+    <CustomBuild Include="..\..\..\modules\base\instrumentation\modInstrumentation.c" />
+    <CustomBuild Include="..\..\..\tools\image2cs.c" />
+    <CustomBuild Include="..\..\..\tools\tool.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoBitmap.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoBitmapFormat.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoConvert.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoFontEngine.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoPixelsOut.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoPoco.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoPocoBlit.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\commodettoStream.h" />
+    <ClInclude Include="..\..\..\modules\commodetto\picojpeg.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{F22BCB02-ABC6-4600-B0F4-CD70E00EC6FB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mcxsid</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuild>
+      <Command>set PATH=%APTH%;$(SolutionDir)$(Configuration)
+xsid %(FullPath) -o $(IntDir) -r %(Filename).xsi</Command>
+      <Outputs>$(IntDir)%(Filename).xsi</Outputs>
+      <LinkObjects>false</LinkObjects>
+      <Message>moddable js compiler</Message>
+    </CustomBuild>
+    <PostBuildEvent>
+      <Command>set PATH=%APTH%;$(SolutionDir)$(Configuration)
+xsl -b $(IntDir)modules -o $(Configuration) -p commodetto\Bitmap.xsb -p commodetto\BMPOut.xsb -p commodetto\BufferOut.xsb -p commodetto\ColorCellOut.xsb -p commodetto\Convert.xsb -p commodetto\ParseBMF.xsb -p commodetto\ParseBMP.xsb -p commodetto\Poco.xsb -p commodetto\ReadPNG.xsb -p commodetto\RLE4Out.xsb -p resampler.xsb -p file.xsb -c 134217728,16777216,8388608,1048576,16384,16384,1993,127,32768,1993,0,main $(IntDir)modules\commodetto\Bitmap.xsb $(IntDir)modules\commodetto\BMPOut.xsb $(IntDir)modules\commodetto\BufferOut.xsb $(IntDir)modules\commodetto\ColorCellOut.xsb $(IntDir)modules\commodetto\Convert.xsb $(IntDir)modules\commodetto\ParseBMF.xsb $(IntDir)modules\commodetto\ParseBMP.xsb $(IntDir)modules\commodetto\PixelsOut.xsb $(IntDir)modules\commodetto\Poco.xsb $(IntDir)modules\commodetto\ReadJPEG.xsb $(IntDir)modules\commodetto\ReadPNG.xsb $(IntDir)modules\commodetto\RLE4Out.xsb $(IntDir)modules\file.xsb $(IntDir)modules\buildclut.xsb $(IntDir)modules\colorcellencode.xsb $(IntDir)modules\compressbmf.xsb $(IntDir)modules\image2cs.xsb $(IntDir)modules\mcconfig.xsb $(IntDir)modules\mclocal.xsb $(IntDir)modules\mcmanifest.xsb $(IntDir)modules\mcrez.xsb $(IntDir)modules\png2bmp.xsb $(IntDir)modules\resampler.xsb $(IntDir)modules\rle4encode.xsb $(IntDir)modules\tool.xsb $(IntDir)modules\wav2maud.xsb $(IntDir)modules\bles2gatt.xsb $(IntDir)commodettoBitmap.xsi $(IntDir)commodettoBufferOut.xsi $(IntDir)commodettoColorCellOut.xsi $(IntDir)commodettoConvert.xsi $(IntDir)commodettoPoco.xsi $(IntDir)commodettoPocoBlit.xsi $(IntDir)commodettoParseBMP.xsi $(IntDir)commodettoParseBMF.xsi $(IntDir)commodettoReadJPEG.xsi $(IntDir)commodettoReadPNG.xsi $(IntDir)image2cs.xsi $(IntDir)miniz.xsi $(IntDir)modInstrumentation.xsi $(IntDir)tool.xsi</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuild>
+      <Command>set PATH=%APTH%;$(SolutionDir)$(Configuration)
+xsid %(FullPath) -o $(IntDir) -r %(Filename).xsi</Command>
+      <Outputs>$(IntDir)%(Filename).xsi</Outputs>
+      <LinkObjects>false</LinkObjects>
+      <Message>moddable js compiler</Message>
+    </CustomBuild>
+    <PostBuildEvent>
+      <Command>set PATH=%APTH%;$(SolutionDir)$(Configuration)
+xsl -b $(IntDir)modules -o $(Configuration) -p commodetto\Bitmap.xsb -p commodetto\BMPOut.xsb -p commodetto\BufferOut.xsb -p commodetto\ColorCellOut.xsb -p commodetto\Convert.xsb -p commodetto\ParseBMF.xsb -p commodetto\ParseBMP.xsb -p commodetto\Poco.xsb -p commodetto\ReadPNG.xsb -p commodetto\RLE4Out.xsb -p resampler.xsb -p file.xsb -c 134217728,16777216,8388608,1048576,16384,16384,1993,127,32768,1993,0,main $(IntDir)modules\commodetto\Bitmap.xsb $(IntDir)modules\commodetto\BMPOut.xsb $(IntDir)modules\commodetto\BufferOut.xsb $(IntDir)modules\commodetto\ColorCellOut.xsb $(IntDir)modules\commodetto\Convert.xsb $(IntDir)modules\commodetto\ParseBMF.xsb $(IntDir)modules\commodetto\ParseBMP.xsb $(IntDir)modules\commodetto\PixelsOut.xsb $(IntDir)modules\commodetto\Poco.xsb $(IntDir)modules\commodetto\ReadJPEG.xsb $(IntDir)modules\commodetto\ReadPNG.xsb $(IntDir)modules\commodetto\RLE4Out.xsb $(IntDir)modules\file.xsb $(IntDir)modules\buildclut.xsb $(IntDir)modules\colorcellencode.xsb $(IntDir)modules\compressbmf.xsb $(IntDir)modules\image2cs.xsb $(IntDir)modules\mcconfig.xsb $(IntDir)modules\mclocal.xsb $(IntDir)modules\mcmanifest.xsb $(IntDir)modules\mcrez.xsb $(IntDir)modules\png2bmp.xsb $(IntDir)modules\resampler.xsb $(IntDir)modules\rle4encode.xsb $(IntDir)modules\tool.xsb $(IntDir)modules\wav2maud.xsb $(IntDir)modules\bles2gatt.xsb $(IntDir)commodettoBitmap.xsi $(IntDir)commodettoBufferOut.xsi $(IntDir)commodettoColorCellOut.xsi $(IntDir)commodettoConvert.xsi $(IntDir)commodettoPoco.xsi $(IntDir)commodettoPocoBlit.xsi $(IntDir)commodettoParseBMP.xsi $(IntDir)commodettoParseBMF.xsi $(IntDir)commodettoReadJPEG.xsi $(IntDir)commodettoReadPNG.xsi $(IntDir)image2cs.xsi $(IntDir)miniz.xsi $(IntDir)modInstrumentation.xsi $(IntDir)tool.xsi</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

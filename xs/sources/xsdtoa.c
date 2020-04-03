@@ -3518,7 +3518,7 @@ strtod2(const char *s00, char **se __XS__d)
 	U aadj2, adj, rv, rv0;
 	ULong y, z;
 	BCinfo bc;
-	Bigint *bb, *bb1, *bd, *bd0, *bs, *delta;
+	Bigint *bb = NULL, *bb1, *bd = NULL, *bd0, *bs = NULL, *delta = NULL;
 #ifdef USE_BF96
 	ULLong bhi, blo, brv, t00, t01, t02, t10, t11, terv, tg, tlo, yz;
 	const BF96 *p10;
@@ -5097,7 +5097,7 @@ dtoa_r(double dd, int mode, int ndigits, int *decpt, int *sign, char **rve, char
 #ifndef Sudden_Underflow
 	int denorm;
 #endif
-	Bigint *b, *b1, *delta, *mlo, *mhi, *S;
+	Bigint *b, *b1, *delta, *mlo = NULL, *mhi, *S;
 	U u;
 	char *s;
 #ifdef SET_INEXACT

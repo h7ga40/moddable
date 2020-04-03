@@ -330,7 +330,7 @@ class SynergyNMakeFile extends NMakeFile {
 			else {
 				this.echo(tool, "cc ", target);
 				this.line("\t$(CC) $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) ", source, " -o $@");
-				this.line("\t$(AR) $(AR_OPTIONS) $(ARCHIVE_FILE) $@");
+				this.line("\t$(AR) $(AR_OPTIONS) $(APP_ARCHIVE) $@");
 			}
 		}
 	}
@@ -1116,7 +1116,7 @@ export default class extends Tool {
 
 		var path = this.tmpPath + this.slash + "makefile", file;
 		if (this.windows) {
-			if (this.platform == "synergy")
+			if ((this.platform == "synergy") || (this.platform == "gr_rose"))
 				file = new SynergyNMakeFile(path);
 			else if (this.platform == "esp")
 				file = new espNMakeFile(path);

@@ -54,6 +54,9 @@
 				"*": "$(MODULES)/network/socket/lwip/modLwipSafe"
 			},
 		},
+		"gr_rose": {
+			"include": "$(BUILD)/devices/gr_rose/manifest.json"
+		},
 		"gecko": {
 			"include": "$(BUILD)/devices/gecko/manifest.json"
 		},

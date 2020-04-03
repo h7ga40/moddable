@@ -1,0 +1,19 @@
+{
+	"modules": {
+		"*": [
+			"$(MODULES)/base/time/*",
+			"$(MODULES)/base/time/gr_rose/*",
+			"$(MODULES)/base/timer/*",
+			"$(MODULES)/base/timer/mc/*",
+		]
+	},
+	"preload": [
+		"time",
+		"timer",
+	],
+	"platforms": {
+		"gr_rose/*": {
+			"include": "./targets/$(SUBPLATFORM)/manifest.json"
+		},
+	}
+}

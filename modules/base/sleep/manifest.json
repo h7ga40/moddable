@@ -9,6 +9,11 @@
 				"*": "$(MODULES)/base/sleep/gecko/*"
 			},
 		},
+		"gr_rose": {
+			"modules": {
+				"*": "$(MODULES)/base/sleep/gr_rose/*"
+			},
+		},
 		"...": {
 			"error": "Sleep module unsupported"
 		},

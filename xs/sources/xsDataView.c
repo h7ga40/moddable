@@ -816,7 +816,7 @@ void fx_DataView_prototype_setUint8Clamped(txMachine* the)
 void fxTypedArrayGetter(txMachine* the)
 {
 	txSlot* instance = fxToInstance(the, mxThis);
-	txSlot* dispatch;
+	txSlot* dispatch = NULL;
 	while (instance) {
 		if (instance->flag & XS_EXOTIC_FLAG) {
 			dispatch = instance->next;
@@ -825,7 +825,7 @@ void fxTypedArrayGetter(txMachine* the)
 		}
 		instance = fxGetPrototype(the, instance);
 	}
-	if (instance) {
+	if (instance && dispatch) {
 		txSlot* view = dispatch->next;
 		txSlot* buffer = view->next;
 		txSlot* data = fxCheckArrayBufferDetached(the, buffer, XS_IMMUTABLE);
@@ -841,7 +841,7 @@ void fxTypedArrayGetter(txMachine* the)
 void fxTypedArraySetter(txMachine* the)
 {
 	txSlot* instance = fxToInstance(the, mxThis);
-	txSlot* dispatch;
+	txSlot* dispatch = NULL;
 	while (instance) {
 		if (instance->flag & XS_EXOTIC_FLAG) {
 			dispatch = instance->next;
@@ -850,7 +850,7 @@ void fxTypedArraySetter(txMachine* the)
 		}
 		instance = fxGetPrototype(the, instance);
 	}
-	if (instance) {
+	if (instance && dispatch) {
 		txSlot* view = dispatch->next;
 		txSlot* buffer = view->next;
 		txU2 shift = dispatch->value.typedArray.dispatch->shift;
@@ -1336,10 +1336,10 @@ void fx_TypedArray_from_object(txMachine* the, txSlot* instance, txSlot* functio
 	txSlot* value;
 	txSlot* list = C_NULL;
 	txSlot* slot;
-	txSlot* dispatch;
+	txSlot* dispatch = NULL;
 	txSlot* view;
 	txSlot* buffer;
-	txSlot* data;
+	txSlot* data = NULL;
 	txU2 shift;
 	txNumber length;
 	mxTemporary(iterator);
@@ -1393,7 +1393,7 @@ void fx_TypedArray_from_object(txMachine* the, txSlot* instance, txSlot* functio
 		else
 			mxTypeError("no TypedArray");
 	}
-	if (list) {
+	if (list && dispatch) {
 		txInteger index = 0;
 		slot = list->next;
 		while (slot) {

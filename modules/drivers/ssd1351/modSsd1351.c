@@ -22,6 +22,7 @@
 //  https://github.com/adafruit/Adafruit-SSD1351-library
 #include "xsmc.h"
 #include "xsHost.h"
+#include "xsPlatform.h"
 #include "modGPIO.h"
 
 #include "commodettoBitmap.h"
