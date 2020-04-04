@@ -774,9 +774,10 @@ void espSampleInstrumentation(modTimer timer, void *refcon, int refconSize)
 {
 	txInteger values[espInstrumentCount];
 	int what;
+	xsMachine *the = *(xsMachine **)refcon;
 
 	for (what = kModInstrumentationPixelsDrawn; what <= kModInstrumentationSystemFreeMemory; what++)
-		values[what - kModInstrumentationPixelsDrawn] = modInstrumentationGet_(what);
+		values[what - kModInstrumentationPixelsDrawn] = modInstrumentationGet_(the, what);
 
 	values[kModInstrumentationTimers - kModInstrumentationPixelsDrawn] -= 1;    // remove timer used by instrumentation
 	fxSampleInstrumentation(gInstrumentationThe, espInstrumentCount, values);
