@@ -46,12 +46,12 @@
     <LinkIncremental>true</LinkIncremental>
     <NMakeBuildCommandLine>set MODDABLE=$(SolutionDir)..
 call $(SolutionDir)$(Configuration)\mcconfig -d -m -o $(ProjectDir) -p x-win $(SolutionDir)..\tools\xsbug\manifest.json
-@robocopy /S /QUIT /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeBuildCommandLine>
+robocopy /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>set MODDABLE=$(SolutionDir)..
 rd /S /Q $(ProjectDir)bin\win\$(Configuration)
 rd /S /Q $(ProjectDir)tmp\win\$(Configuration)
 $(SolutionDir)$(Configuration)\mcconfig -d -m -o $(ProjectDir) -p x-win $(SolutionDir)..\tools\xsbug\manifest.json -t all
-robocopy /S /QUIT /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeReBuildCommandLine>
+robocopy /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>rd /S /Q $(ProjectDir)bin\win\$(Configuration)
 rd /S /Q $(ProjectDir)tmp\win\$(Configuration)</NMakeCleanCommandLine>
     <NMakeOutput>$(SolutionDir)$(Configuration)\xsbug.exe</NMakeOutput>
@@ -60,12 +60,12 @@ rd /S /Q $(ProjectDir)tmp\win\$(Configuration)</NMakeCleanCommandLine>
     <LinkIncremental>false</LinkIncremental>
     <NMakeBuildCommandLine>set MODDABLE=$(SolutionDir)..
 call $(SolutionDir)$(Configuration)\mcconfig -d -m -o $(ProjectDir) -p x-win $(SolutionDir)..\tools\xsbug\manifest.json
-@robocopy /S /QUIT /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeBuildCommandLine>
+@robocopy /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>set MODDABLE=$(SolutionDir)..
 rd /S /Q $(ProjectDir)bin\win\$(Configuration)
 rd /S /Q $(ProjectDir)tmp\win\$(Configuration)
 $(SolutionDir)$(Configuration)\mcconfig -d -m -o $(ProjectDir) -p x-win $(SolutionDir)..\tools\xsbug\manifest.json -t all
-robocopy /S /QUIT /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeReBuildCommandLine>
+robocopy /R:1 /W:1 $(ProjectDir)bin\win\$(Configuration) $(SolutionDir)$(Configuration) *.* &amp; exit 0</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>rd /S /Q $(ProjectDir)bin\win\$(Configuration)
 rd /S /Q $(ProjectDir)tmp\win\$(Configuration)</NMakeCleanCommandLine>
     <NMakeOutput>$(SolutionDir)$(Configuration)\xsbug.exe</NMakeOutput>
