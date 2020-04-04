@@ -1,20 +1,26 @@
 {
+    "env": {
+        "ROSE_SKETCH": "D:\\Github\\GR-ROSE\\rose_sketch"
+    },
     "configurations": [
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\arduino",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\arduino\\core",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\config_files",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\include",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\include\\private",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\FreeRTOS\\portable\\GCC\\RX600v2",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\FreeRTOS-Plus-TCP\\include",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\lib\\aws\\FreeRTOS-Plus-TCP\\source\\portable\\Compiler\\GCC",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\src\\amazon_freertos_common",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\src\\FIT_modified_code\\r_bsp\\mcu\\rx65n\\register_access\\gnuc",
-                "D:\\Github\\GR-ROSE\\rose_sketch\\FreeRTOS\\src\\FIT_setting_files\\r_config"
+                "${ROSE_SKETCH}/arduino",
+                "${ROSE_SKETCH}/arduino/core",
+                "${ROSE_SKETCH}/FreeRTOS/config_files",
+                "${ROSE_SKETCH}/FreeRTOS/lib/aws/include",
+                "${ROSE_SKETCH}/FreeRTOS/lib/aws/include/private",
+                "${ROSE_SKETCH}/FreeRTOS/lib/aws/FreeRTOS/portable/GCC/RX600v2",
+                "${ROSE_SKETCH}/FreeRTOS/lib/aws/FreeRTOS-Plus-TCP/include",
+                "${ROSE_SKETCH}/FreeRTOS/lib/aws/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC",
+                "${ROSE_SKETCH}/FreeRTOS/src/amazon_freertos_common",
+                "${ROSE_SKETCH}/FreeRTOS/src/FIT_modified_code/r_bsp/mcu/rx65n/register_access/gnuc",
+                "${ROSE_SKETCH}/FreeRTOS/src/FIT_setting_files/r_config",
+                "${workspaceFolder}/xs/includes",
+                "${workspaceFolder}/xs/sources",
+                "${workspaceFolder}/xs/platforms/gr_rose",
+                "${workspaceFolder}/build/devices/gr_rose"
             ],
             "defines": [
                 "CPPAPP",

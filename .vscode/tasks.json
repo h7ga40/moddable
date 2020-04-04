@@ -6,18 +6,46 @@
         {
             "label": "build tools",
             "type": "shell",
-            "options": {
-                "cwd": "${workspaceRoot}\\build\\makefiles\\win"
+            "linux": {
+                "options": {
+                    "cwd": "${workspaceRoot}/build/makefiles/lin"
+                },
+                "command": "make",
+                "problemMatcher": "$gcc",
             },
-            "command": "build.bat",
-            "problemMatcher": "$msCompile",
+            "osx":{
+                "options": {
+                    "cwd": "${workspaceRoot}/build/makefiles/lin"
+                },
+                "command": "make",
+                "problemMatcher": "$gcc",
+            },
+            "windows": {
+                "options": {
+                    "cwd": "${workspaceRoot}\\build\\makefiles\\win"
+                },
+                "command": "build.bat",
+                "problemMatcher": "$msCompile",
+            },
             "group": "build"
         },
         {
             "label": "build hello world",
             "type": "shell",
-            "options": {
-                "cwd": "${workspaceRoot}\\examples\\helloworld"
+            "linux": {
+                "options": {
+                    "cwd": "${workspaceRoot}/examples/helloworld"
+                },
+            },
+            "osx":{
+                "options": {
+                    "cwd": "${workspaceRoot}/examples/helloworld"
+                },
+            },
+            "windows": {
+                "options": {
+                    "cwd": "${workspaceRoot}\\examples\\helloworld"
+                },
             },
             "command": "mcconfig",
             "args": [

@@ -71,13 +71,9 @@ INC_DIRS = \
 	-I$(FREERTOS_ROOT)\lib\aws\FreeRTOS-Plus-TCP\source\portable\Compiler\GCC \
 	-I$(FREERTOS_ROOT)\src\amazon_freertos_common \
 	-I$(FREERTOS_ROOT)\src\FIT_modified_code\r_bsp\mcu\rx65n\register_access\gnuc \
-	-I$(FREERTOS_ROOT)\src\FIT_setting_files\r_config \
-	-I$(PLATFORM_DIR)\lib\rtc \
-	-I$(PLATFORM_DIR)\lib\tinyprintf \
+	-I$(FREERTOS_ROOT)\src\FIT_setting_files\r_config
 
-SDK = \
-    -I$(PLATFORM_DIR)\lib\tinyprintf \
-    -I$(PLATFORM_DIR)\lib\rtc
+SDK = 
 
 XS_OBJ = \
 	$(LIB_DIR)\xsHost.o \
@@ -128,7 +124,6 @@ XS_OBJ = \
 XS_DIRS = \
 	-I$(XS_DIR)\includes \
 	-I$(XS_DIR)\sources \
-	-I$(XS_DIR)\sources\pcre \
 	-I$(XS_DIR)\platforms\gr_rose \
 	-I$(BUILD_DIR)\devices\gr_rose
 XS_HEADERS = \
